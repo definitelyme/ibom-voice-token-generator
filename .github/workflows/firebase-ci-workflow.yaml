@@ -30,8 +30,8 @@ jobs:
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
-          name: public
-          path: public
+          name: project-root-folder
+          path: .*
 
   deploy:
     name: Run Firebase Tasks
@@ -44,8 +44,8 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: public
-          path: public
+          name: project-root-folder
+          path: .*
 
       - name: Deploy Functions
         uses: w9jds/firebase-action@master
@@ -69,8 +69,8 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: public
-          path: public
+          name: project-root-folder
+          path: .*
 
       - name: Bump version and push tag
         id: bump_tag
