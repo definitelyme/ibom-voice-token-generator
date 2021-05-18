@@ -81,8 +81,8 @@ const TokenGenerator = class TokenGenerator {
         roleErrors.push(`User Role must be of type 'String'`);
       if (role == "" || role === "" || !role.length)
         roleErrors.push("User Role cannot be blank / empty!");
-      if (role !== "PUBLISHER" || role !== "SUBSCRIBER")
-        roleErrors.push("Valid User Roles are 'PUBLISHER' & 'SUBSCRIBER'");
+      // if (role !== "PUBLISHER" || role !== "SUBSCRIBER")
+        // roleErrors.push("Valid User Roles are 'PUBLISHER' & 'SUBSCRIBER'");
     }
 
     if (appIdErrors.length) errors["app_id"] = appIdErrors;
