@@ -29,7 +29,7 @@ const TokenGenerator = class TokenGenerator {
       privilegeExpiredTs
     );
 
-    return { token, expires: privilegeExpiredTs };
+    return { token, expires: Date.now() + (expirationTimeInSeconds * 1000) };
   }
 
   validator = (uid, channel, role) => {

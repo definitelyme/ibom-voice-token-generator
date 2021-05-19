@@ -50,7 +50,7 @@ jobs:
       - name: Deploy Functions
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only functions,hosting:token-gen
+          args: deploy --only functions:app,hosting:token-gen
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
