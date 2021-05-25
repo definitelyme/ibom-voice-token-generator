@@ -19,7 +19,8 @@ const TokenGenerator = class TokenGenerator {
     const privilegeExpiredTs = currentTimestamp + expirationTimeInSeconds;
 
     const _role =
-      new String(role).valueOf() == new String("SUBSCRIBER").valueOf()
+      new String(role).toLowerCase().valueOf() ==
+      new String("SUBSCRIBER").toLowerCase().valueOf()
         ? RtcRole.SUBSCRIBER
         : RtcRole.PUBLISHER;
 
@@ -36,7 +37,7 @@ const TokenGenerator = class TokenGenerator {
       token,
       channel,
       expires: Date.now() + expirationTimeInSeconds * 1000,
-      role: _role == 0 ? "SUBSCRIBER" : "PUBLISHER",
+      role: _role == 1 ? "SUBSCRIBER" : "PUBLISHER",
       incoming: _role,
     };
   }
