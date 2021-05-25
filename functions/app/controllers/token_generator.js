@@ -19,8 +19,8 @@ const TokenGenerator = class TokenGenerator {
     const privilegeExpiredTs = currentTimestamp + expirationTimeInSeconds;
 
     const _role =
-      new String(role?.toLowerCase())?.valueOf() ===
-      new String("SUBSCRIBER".toLowerCase()).valueOf()
+      new String(role).toLowerCase().valueOf() ===
+      new String("SUBSCRIBER").toLowerCase().valueOf()
         ? RtcRole.SUBSCRIBER
         : RtcRole.PUBLISHER;
 
