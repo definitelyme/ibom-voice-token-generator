@@ -35,4 +35,4 @@ app.use(function (err, req, res, next) {
   });
 });
 
-exports.app = functions.https.onRequest(app);
+exports.generator = functions.https.onRequest(app);
