@@ -38,7 +38,7 @@ const TokenGenerator = class TokenGenerator {
       channel,
       expires: Date.now() + expirationTimeInSeconds * 1000,
       role: _role === 1 ? "SUBSCRIBER" : "PUBLISHER",
-      incoming: new String(role?.toLowerCase()).valueOf(),
+      incoming: new String(role).toLowerCase().valueOf(),
       _role,
     };
   }
