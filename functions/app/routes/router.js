@@ -9,7 +9,7 @@ router.get("/", function (req, res, next) {
 });
 
 /* Generate Agora RTC Token */
-router.post("/token/generate", (req, res, next) => {
+router.post("/token", (req, res, next) => {
   const { app_id, app_certificate, uid, channel, role } = req.body;
 
   var generator = new TokenGenerator(app_id, app_certificate);
