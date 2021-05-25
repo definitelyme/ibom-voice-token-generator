@@ -29,7 +29,12 @@ const TokenGenerator = class TokenGenerator {
       privilegeExpiredTs
     );
 
-    return { token, expires: Date.now() + (expirationTimeInSeconds * 1000) };
+    return {
+      token,
+      channel,
+      expires: Date.now() + expirationTimeInSeconds * 1000,
+      role: _role == 0 ? "SUBSCRIBER" : "PUBLISHER",
+    };
   }
 
   validator = (uid, channel, role) => {
@@ -82,7 +87,7 @@ const TokenGenerator = class TokenGenerator {
       if (role == "" || role === "" || !role.length)
         roleErrors.push("User Role cannot be blank / empty!");
       // if (role !== "PUBLISHER" || role !== "SUBSCRIBER")
-        // roleErrors.push("Valid User Roles are 'PUBLISHER' & 'SUBSCRIBER'");
+      // roleErrors.push("Valid User Roles are 'PUBLISHER' & 'SUBSCRIBER'");
     }
 
     if (appIdErrors.length) errors["app_id"] = appIdErrors;
