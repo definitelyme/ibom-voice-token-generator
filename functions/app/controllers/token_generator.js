@@ -20,8 +20,8 @@ const TokenGenerator = class TokenGenerator {
 
     const _role =
       role.toLowerCase() === "SUBSCRIBER".toLowerCase()
-        ? RtcRole.PUBLISHER
-        : RtcRole.SUBSCRIBER;
+        ? RtcRole.SUBSCRIBER
+        : RtcRole.PUBLISHER;
 
     const token = RtcTokenBuilder.buildTokenWithUid(
       this.appId,
@@ -35,11 +35,8 @@ const TokenGenerator = class TokenGenerator {
     return {
       token,
       channel,
+      role: role.toUpperCase(),
       expires: Date.now() + expirationTimeInSeconds * 1000,
-      role: _role === 1 ? "SUBSCRIBER" : "PUBLISHER",
-      equal: role.toLowerCase() === "SUBSCRIBER".toLowerCase(),
-      // incoming: new String(role).toLowerCase().valueOf(),
-      // _role,
     };
   }
 
