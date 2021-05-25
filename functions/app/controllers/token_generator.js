@@ -38,7 +38,6 @@ const TokenGenerator = class TokenGenerator {
       channel,
       expires: Date.now() + expirationTimeInSeconds * 1000,
       role: _role == 1 ? "SUBSCRIBER" : "PUBLISHER",
-      incoming: _role,
     };
   }
 
